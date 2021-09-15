@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: floorplan-classifier
+  labels:
+    app: workbench
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: workbench-floorplan-classifier
+  template:
+    metadata:
+      labels:
+        app: workbench-floorplan-classifier
+    spec:
+      containers:
+      - name: floorplan-classifier
+        image: fidbau.ulb.tu-darmstadt.de:5000/fid-bau-microservices-floorplan-classifier:latest
+        ports:
+        - containerPort: 3000
+        #livenessProbe:
+        #  httpGet:
+        #    path: /healthz
+        #    port: 3000
+        #  initialDelaySeconds: 2
+        #  periodSeconds: 2
+        #readinessProbe:
+        #  httpGet:
+        #    path: /healthz
+        #    port: 3000
+        #  initialDelaySeconds: 2
+        #  periodSeconds: 2
+      imagePullSecrets:
+      - name: regcred
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: floorplan-classifier
+  labels:
+    app: workbench
+spec:
+  ports:
+  - port: 8080
+    targetPort: 8080
+    protocol: TCP
+  selector:
+    app: workbench-floorplan-classifier
+

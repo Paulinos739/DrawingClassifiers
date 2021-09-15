@@ -1,0 +1,9 @@
+version: '2'
+services:
+  floorplan-classifier:
+    image: fidbau.ulb.tu-darmstadt.de:5000/fid-bau-microservices-floorplan-classifier
+    build:
+      context: .
+      dockerfile: build/package/Dockerfile
+    ports:
+      - "8080:8080"
