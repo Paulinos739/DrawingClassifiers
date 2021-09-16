@@ -1,4 +1,4 @@
-# Architectural Drawing Classification through ML
+# Automated Architectural Drawing Classification
 
 This docker image builds an API to categorize architectural drawings with
 Convolutional Neural Networks through an HTTP Port.
@@ -7,11 +7,13 @@ for long-term archiving.
 The API takes a user input parsed via the HTTP interface in server.py, runs predictions on n number of  images
 and stores the predictions in either a json string or a csv-file. 
 
-This is an ongoing research from the FID BAUdigital, conducted at TU Darmstadt.
+This is an ongoing research from the [FID BAUdigital](https://kickoff.fid-bau.de/en/), conducted at the TU Darmstadt.
+
+<img src="C:\Users\PAUL\PycharmProjects\DrawingClassifiers\content\FlowChartPrototype.png"/>
 
 **PredictDrawingCategory**
 
-This script predicts if an architectural drawing belongs either to the category floor plan, section or elevation
+This script predicts if an architectural drawing either belongs to the category floor plan, section or elevation
 through a Multi-Class Classification Model. Accepted drawing types are: floor plan, elevation and section.
 
 
@@ -25,9 +27,9 @@ Accepted drawing types are only floor plans.
 
 **Usage**
 
-To run the docker image, do the following:
+Run API with:
 
-1. git clone repo
-2. docker build -t test -f build/package/Dockerfile
-3. docker -p 8080:8080 run test
-4. http://localhost:8080/pattern or http://localhost:8080/category
+1. `git clone`
+2. `docker build -t test -f build/package/Dockerfile`
+3. `docker -p 8080:8080 run test`
+4. `http://localhost:8080/pattern or http://localhost:8080/category`
