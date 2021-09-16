@@ -8,6 +8,7 @@ from PredictDesignPattern import PatternPrediction
 
 app = Flask(__name__)
 
+
 @app.route('/<string:classifierType>', methods=['GET', 'POST'])
 def upload(classifierType=None):
     if not classifierType in ['category', 'pattern']:
@@ -23,7 +24,6 @@ def upload(classifierType=None):
             responseType = 'text/csv; charset=utf-8'
         elif format == 'json':
             responseType = 'application/json; charset=utf-8'
-
 
         tempDir = tempfile.TemporaryDirectory()
         filenames = []
@@ -58,6 +58,7 @@ def upload(classifierType=None):
         <input type="submit">
     </form>
     '''.format(classifierType)
+
 
 if __name__ == '__main__':
     port = 8080

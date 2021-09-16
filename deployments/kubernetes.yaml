@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: floorplan-classifier
+  name: DrawingClassifiers
   labels:
     app: workbench
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: workbench-floorplan-classifier
+      app: workbench-DrawingClassifiers
   template:
     metadata:
       labels:
-        app: workbench-floorplan-classifier
+        app: workbench-DrawingClassifiers
     spec:
       containers:
-      - name: floorplan-classifier
+      - name: DrawingClassifiers
         image: fidbau.ulb.tu-darmstadt.de:5000/fid-bau-microservices-floorplan-classifier:latest
         ports:
         - containerPort: 3000
@@ -37,7 +37,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: floorplan-classifier
+  name: DrawingClassifiers
   labels:
     app: workbench
 spec:
@@ -46,5 +46,5 @@ spec:
     targetPort: 8080
     protocol: TCP
   selector:
-    app: workbench-floorplan-classifier
+    app: workbench-DrawingClassifiers
 
