@@ -9,7 +9,7 @@ and stores the predictions in either a json string or a csv-file.
 
 This is an ongoing research from the [FID BAUdigital](https://kickoff.fid-bau.de/en/), conducted at the TU Darmstadt.
 
-<img src="C:\Users\PAUL\PycharmProjects\DrawingClassifiers\content\FlowChartPrototype.png"/>
+<img src="https://github.com/Paulinos739/DrawingClassifiers/tree/master/contentFlowChartPrototype.png"/>
 
 **PredictDrawingCategory**
 
@@ -24,6 +24,7 @@ Categories/Patterns include the following shapes: Rectangle, Circle, Composite-r
 It furthermore includes the following interior Patterns: Atrium, Column Grid and Staircase.
 Accepted drawing types are only floor plans.
 
+<img src="content/CategoryPrediction.JPG"/>
 
 **Usage**
 
