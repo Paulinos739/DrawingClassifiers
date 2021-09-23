@@ -39,16 +39,11 @@ def CategoryPrediction(directory: str, filetype='json'):
     # Then run inference
     predictions = DrawingCategoryClassifier().predict(images)
 
-    # Compute prediction confidence
-    confidence = softmax(predictions)
-    confidence = np.around(confidence, decimals=2)
-    sum_confidence = np.ndarray.sum(confidence, axis=1)
-    sum_confidence = np.around(sum_confidence, decimals=2)
+
 
     # Create Pandas DataFrame with shape (10,5)
     df = pd.DataFrame(data=predictions, columns=['elevation', 'floor-plan', 'section'])
     df.insert(0, 'file', filenames)
-    df.insert(4, 'confidence', sum_confidence)
 
     # Export to files
     if not filetype in ['csv', 'json']:
