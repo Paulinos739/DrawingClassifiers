@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: DrawingClassifiers
-        image: fidbau.ulb.tu-darmstadt.de:5000/fid-bau-microservices-floorplan-classifier:latest
+        image:
         ports:
         - containerPort: 3000
         #livenessProbe:

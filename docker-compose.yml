@@ -1,7 +1,7 @@
 version: '2'
 services:
-  floorplan-classifier:
-    image: fidbau.ulb.tu-darmstadt.de:5000/fid-bau-microservices-floorplan-classifier
+  DrawingClassifiers:
+    image:
     build:
       context: .
       dockerfile: build/package/Dockerfile

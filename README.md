@@ -1,36 +1,43 @@
-# Automated Architectural Drawing Classification
+# Automated Classification of Architectural Drawings 
 
-This docker image builds an API to categorize architectural drawings with
-Convolutional Neural Networks through an HTTP Port.
+This docker image builts an API which categorizes architectural drawings through
+Convolutional Neural Networks.
 The goal was to develop a framework to automatically create relevant metadata of drawings
-for long-term archiving.
-The API takes a user input parsed via the HTTP interface in server.py, runs predictions on n number of  images
-and stores the predictions in either a json string or a csv-file. 
+for the purpose of long-term archiving.
+The API takes a user input parsed via the HTTP interface in server.py, runs predictions on n number of images
+and stores the predictions in either a JSON-string or a csv-file. 
 
-This is an ongoing research from the [FID BAUdigital](https://kickoff.fid-bau.de/en/), conducted at the TU Darmstadt.
+It is an ongoing research from the [FID BAUdigital](https://kickoff.fid-bau.de/en/), conducted at the ULB Darmstadt.
 
-<img src="https://github.com/Paulinos739/DrawingClassifiers/tree/master/contentFlowChartPrototype.png"/>
+![](content/FlowChartPrototype.png)
 
 **PredictDrawingCategory**
 
-This script predicts if an architectural drawing either belongs to the category floor plan, section or elevation
-through a Multi-Class Classification Model. Accepted drawing types are: floor plan, elevation and section.
+This script predicts if an architectural drawing either belongs to the category of a floor plan, a section or an elevation
+through a Multi-Class Classification Model. The accepted drawing types are therefore: floor plan, elevation and section.
+
+To train the network on drawing categories, the following network architecture was used:
+![](content/model_architecture.png)
 
 
 **PredictDesignPattern**
 
-This script estimates the presence of certain architectural design patterns in floor plan drawings.
-Categories/Patterns include the following shapes: Rectangle, Circle, Composite-rectangular, Organic, Longitudinal, Polygonal.
-It furthermore includes the following interior Patterns: Atrium, Column Grid and Staircase.
-Accepted drawing types are only floor plans.
+This script estimates the presence of certain architectural design patterns in floor plan drawings, built on top of
+my DeepPattern repository. Categories/Patterns include the following shapes: _Rectangle, Circle, Composite-rectangular,
+Organic, Longitudinal, Polygonal_.
+It furthermore includes the following interior Patterns: _Atrium, Column Grid and Staircase_.
+Accepted drawing types are thus only floor plans.
 
-<img src="content/CategoryPrediction.JPG"/>
+![](content/CategoryPrediction.JPG)
 
 **Usage**
 
-Run API with:
+To run the API:
 
 1. `git clone`
-2. `docker build -t test -f build/package/Dockerfile`
-3. `docker -p 8080:8080 run test`
+2. `docker build -t python3 -f build/package/Dockerfile`
+3. `docker -p 8080:8080 run python3`
 4. `http://localhost:8080/pattern or http://localhost:8080/category`
+
+
+For questions, email me at: paul.arch@web.de
