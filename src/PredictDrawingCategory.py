@@ -9,10 +9,8 @@
 # Import Libraries
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
-from scipy.special import softmax
 import numpy as np
 import os
-import typing
 import pandas as pd
 
 
@@ -38,8 +36,6 @@ def CategoryPrediction(directory: str, filetype='json'):
 
     # Then run inference
     predictions = DrawingCategoryClassifier().predict(images)
-
-
 
     # Create Pandas DataFrame with shape (10,5)
     df = pd.DataFrame(data=predictions, columns=['elevation', 'floor-plan', 'section'])
