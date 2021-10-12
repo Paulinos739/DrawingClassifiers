@@ -7,7 +7,7 @@ for the purpose of long-term archiving.
 The API takes a user input parsed via the HTTP interface in server.py, runs predictions on n number of images
 and stores the predictions in either a JSON-string or a csv-file. 
 
-It is an ongoing research from the [FID BAUdigital](https://kickoff.fid-bau.de/en/), conducted at the ULB Darmstadt.
+It is an ongoing research from the [FID BAUdigital](https://kickoff.fid-bau.de/en/), conducted at the Universitäts- und Landesbibliothek Darmstadt, at the TU Darmstadt.
 
 ![](content/FlowChartPrototype.png)
 
