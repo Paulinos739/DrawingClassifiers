@@ -29,6 +29,7 @@ It furthermore includes the following interior Patterns: _Atrium, Column Grid an
 Accepted drawing types are thus only floor plans.
 
 ![](content/CategoryPrediction.JPG)
+![](content/FlowChart_web.png)
 
 **Usage**
 
